@@ -89,7 +89,7 @@ uci=mean(bank)+sqrt(var(bank))*1.96
 print(lci)
 print(uci)
 ```
-The fair odds in the function of Brownlows earnings should be an average of -$5.00. 
+The fair odds in the function of Brownlows earnings should be an average of $4.40. 
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
