@@ -54,7 +54,8 @@ print(mean(bank))
 hist(bank)
       
 ```
-The average profit would be 260 dollars.
+
+The average profit is 280 dollars.
 
 ```{r}
 varbank=var(bank)
