@@ -1,6 +1,6 @@
 ---
 title: "Brownlows Bets"
-author: "Your Name Goes Here"
+author: "Lizeth Marquez"
 output: 
   html_document:
     number_sections: true
@@ -24,7 +24,7 @@ source(file="BrLw.R")
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
- At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students "I will wager $2 to your bet of $1 that at least two people in today's class have  the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
+ At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students "I will wager $2 to your bet of $1 that at least two people in today's class have the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
  
 Report git commit structure:
 There are 3 questions and there should be at least 3 separate commits, at least one dealing with each of the 3 questions.
@@ -41,6 +41,30 @@ The function will be given a class_size by number of students, odds, and Number_
 ## the standard deviation and a 95% confidence interval for their earnings?
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
+
+# 1 What are the fair odds for a 35-person class?
+Assume we do this bet 40 times.
+
+```{r}
+bank = vector('numeric')
+for (i in 1:100){
+  bank[i] = BrLw (35, 2, 637)}
+
+print(mean(bank))
+hist(bank)
+      
+```
+The average profit would be 260 dollars.
+
+```{r}
+varbank=var(bank)
+lci=mean(bank)-sqrt(var(bank))*1.96
+uci=mean(bank)+sqrt(var(bank))*1.96
+print(lci)
+print(uci)
+```
+
+
 
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
