@@ -58,6 +58,7 @@ hist(bank)
 The average profit is 280 dollars.
 
 ```{r}
+
 varbank=var(bank)
 lci=mean(bank)-sqrt(var(bank))*1.96
 uci=mean(bank)+sqrt(var(bank))*1.96
@@ -73,21 +74,49 @@ print(uci)
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
+```{r}
 
+bank = vector('numeric')
+for (i in 1:100){
+  bank[i] = BrLw (35, 4.40, 637)}
 
+print(mean(bank))
+hist(bank)
+
+varbank=var(bank)
+lci=mean(bank)-sqrt(var(bank))*1.96
+uci=mean(bank)+sqrt(var(bank))*1.96
+print(lci)
+print(uci)
+```
+The fair odds in the function of Brownlows earnings should be an average of -$5.00. 
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
 
+```{r}
 
+bank = vector('numeric')
+for (i in 1:100){
+  bank[i] = BrLw (28, 2, 637)}
 
+print(mean(bank))
+hist(bank)
 
+varbank=var(bank)
+lci=mean(bank)-sqrt(var(bank))*1.96
+uci=mean(bank)+sqrt(var(bank))*1.96
+print(lci)
+print(uci)
+```
 
+If there are a total of 28 people in class, then the 2:1 bet would be fair.
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
+If there are a total of 28 people in class, then the 2:1 bet would be fair.
